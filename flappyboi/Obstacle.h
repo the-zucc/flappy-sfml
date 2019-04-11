@@ -1,9 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-class Obstacle
+#include "Entity.h"
+class Obstacle : public Entity
 {
 public:
-	Obstacle(sf::Window window, float height);
+	Obstacle(sf::Window &window, float height);
 	~Obstacle();
 };
 

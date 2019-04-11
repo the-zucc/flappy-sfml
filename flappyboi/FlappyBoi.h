@@ -1,8 +1,10 @@
 #pragma once
-class FlappyBoi
+#include "Entity.h"
+#include <SFML/Graphics.hpp>
+class FlappyBoi : public Entity
 {
 public:
-	FlappyBoi();
+	FlappyBoi(sf::Window &window, float x, float y);
 	~FlappyBoi();
 
 };
