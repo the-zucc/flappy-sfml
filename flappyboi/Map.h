@@ -6,7 +6,6 @@ public:
 	Map();
 	~Map();
 private:
-	FlappyBoi boi;
-
+	FlappyBoi *boi;
 };
 

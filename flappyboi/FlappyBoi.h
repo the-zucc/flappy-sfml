@@ -4,8 +4,10 @@
 class FlappyBoi : public Entity
 {
 public:
-	FlappyBoi(sf::Window &window, float x, float y);
+	FlappyBoi(sf::Window *window, float x, float y);
 	~FlappyBoi();
-
+	void update(float detaT);
+	sf::Shape* buildShape();
+private:
+	sf::Vector2f velocity;
 };
-
