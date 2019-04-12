@@ -1,11 +1,17 @@
 #pragma once
 #include "FlappyBoi.h"
+#include "Obstacle.h"
+#include <list>
 class Map
 {
 public:
-	Map();
+	Map(sf::RenderWindow *window);
 	~Map();
+	void update(float deltaT, bool spacePressed);
+	void drawElements();
 private:
-	FlappyBoi *boi;
+	std::list<Obstacle *> obstacles;
+	FlappyBoi* boi;
+	sf::RenderWindow* window;
 };
 

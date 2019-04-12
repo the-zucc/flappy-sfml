@@ -3,7 +3,7 @@
 
 
 
-Entity::Entity(sf::Window *window, float x, float y)
+Entity::Entity(sf::RenderWindow *window, float x, float y)
 {
 	this->window = window;
 	this->position = { x, y };
@@ -15,8 +15,17 @@ Entity::~Entity()
 {
 }
 
-void Entity::_update(float deltaT)
+void Entity::update(float deltaT)
 {
-	this->update(deltaT);
-	this->draw();
+	
+}
+
+void Entity::draw()
+{
+	this->window->draw(*this->shape);
+}
+
+sf::Shape* Entity::buildShape()
+{
+	return new sf::CircleShape(100.f);
 }

@@ -3,7 +3,7 @@
 
 
 
-Obstacle::Obstacle(sf::Window *window, float height)
+Obstacle::Obstacle(sf::RenderWindow *window, float height)
 	: Entity(window, height, window->getSize().x)
 {
 

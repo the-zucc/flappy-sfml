@@ -4,7 +4,7 @@
 class Obstacle : public Entity
 {
 public:
-	Obstacle(sf::Window *window, float height);
+	Obstacle(sf::RenderWindow *window, float height);
 	~Obstacle();
 };
 
