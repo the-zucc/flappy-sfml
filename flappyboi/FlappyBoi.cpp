@@ -23,16 +23,19 @@ void FlappyBoi::update(float deltaT)
 }
 sf::Shape* FlappyBoi::buildShape()
 {
-	return new sf::CircleShape(50.0f);
+	sf::CircleShape* returnVal = new sf::CircleShape(50.0f);
+	returnVal->setFillColor(sf::Color::Green);
+	return returnVal;
 }
 
 void FlappyBoi::jump()
 {
-	this->velocity += Constants::jumpVector;
+	std::cout << "jumped";
+	this->velocity -= this->velocity;
 }
 
 void FlappyBoi::fall(float deltaT)
 {
-	this->position += this->velocity;
+	this->position += this->velocity * deltaT;
 	this->velocity += Constants::gravity * deltaT;
 }

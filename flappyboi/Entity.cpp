@@ -22,6 +22,7 @@ void Entity::update(float deltaT)
 
 void Entity::draw()
 {
+	this->shape->setPosition(this->position);
 	this->window->draw(*this->shape);
 }
 

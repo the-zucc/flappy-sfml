@@ -6,6 +6,7 @@
 Map::Map(sf::RenderWindow *window)
 {
 	this->boi = new FlappyBoi(window, window->getSize().x / 2, window->getSize().x / 2);
+
 	this->obstacles = std::list<Obstacle*>();
 	this->window = window;
 }
@@ -21,7 +22,6 @@ void Map::update(float deltaT, bool spacePressed) {
 	//move boi
 	//move obstacles
 	FlappyBoi* boi = this->boi;
-	
 	if (spacePressed) {
 		boi->jump();
 	}

@@ -5,7 +5,7 @@
 bool pollEvents(sf::Event &event, sf::Window& window);
 
 int main(int argc, char** argv) {
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode( 1280, 720 ), "SFML works!");
 
 	sf::Clock clock;
 	sf::Time accumulator = sf::Time::Zero;
@@ -21,7 +21,9 @@ int main(int argc, char** argv) {
 			map.update(ups.asSeconds(), spacePressed);
 			//Physics();
 		}
+		window.clear();
 		map.drawElements();
+		window.display();
 		accumulator += clock.restart();
 	}
 	return 0;
@@ -43,9 +45,7 @@ bool pollEvents(sf::Event& event, sf::Window& window)
 
 			// key pressed
 		case sf::Event::KeyPressed:
-			if (event.key.code == sf::Keyboard::Space) {
 				spacePressed = true;
-			}
 			break;
 		default:
 			break;
